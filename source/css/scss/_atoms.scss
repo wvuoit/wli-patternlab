@@ -1,0 +1,107 @@
+/*
+ _____     _     _               __    ____            _             _       
+|_   _|_ _| |__ | | ___    ___  / _|  / ___|___  _ __ | |_ ___ _ __ | |_ ___ 
+  | |/ _` | '_ \| |/ _ \  / _ \| |_  | |   / _ \| '_ \| __/ _ \ '_ \| __/ __|
+  | | (_| | |_) | |  __/ | (_) |  _| | |__| (_) | | | | ||  __/ | | | |_\__ \
+  |_|\__,_|_.__/|_|\___|  \___/|_|    \____\___/|_| |_|\__\___|_| |_|\__|___/
+
+- inlineNav
+- leadText
+- carouselBox
+
+ */
+
+.wvu-atom-inlineNav {
+
+	.wvu-navList {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		background-color: $color1;
+
+		a {
+			color: white;
+			text-decoration: none;
+			font-size: 1.0625rem;
+			font-weight: 300;
+			padding: 1rem;
+			display: block;
+		}
+	}
+
+	@media screen and (min-width: $size-small) {
+		text-align: center;
+
+		.wvu-navList {
+			background-color: transparent;
+			display: inline-block;
+			position: relative;
+			height: 1.25rem;
+			border-left: 1px solid white;
+			border-right: 1px solid white;
+			border-left: 1px solid rgba(255, 255, 255, .5);
+			border-right: 1px solid rgba(255, 255, 255, .5);
+			margin-top: 1.5rem;
+
+			> li {
+				display: inline-block;
+			}
+
+			a {
+				display: inline-block;
+				margin-top: -1.125rem;
+			}
+
+			&:before, 
+			&:after {
+				content: '';
+				position: absolute;
+				height: 0.25rem;
+				width: 300%;
+				border-top: 1px solid white;
+				border-bottom: 1px solid white;
+				border-top: 1px solid rgba(255,255,255, .5);
+				border-bottom: 1px solid rgba(255,255,255, .5);
+				top: 50%;
+				margin-top: -0.1875rem;
+			}
+
+			&:before {
+				left: 100%;
+			}
+
+			&:after {
+				right: 100%;
+			}
+		}
+	}
+}
+
+.wvu-atom-leadText {
+	font-size: 1.5rem;
+}
+
+.wvu-atom-carouselBox {
+	$padding: 2rem;
+	width: 18rem;
+	height: 24.75rem;
+	background-color: white;
+	padding: $padding;
+	box-sizing: border-box;
+	display: inline-block;
+
+	img {
+		margin-top: -$padding;
+		margin-left: -$padding;
+		margin-bottom: $padding;
+	}
+
+	.wvu-title {
+		font-size: 1.25rem;
+		font-weight: $font-light;
+	}
+
+	.wvu-desc {
+		font-size: 1rem;
+	}
+}
