@@ -11,6 +11,11 @@
 	- _flourish
 - p
 	- _lead
+- a
+- colors
+- hr
+- section
+
 
 */
 
@@ -49,8 +54,6 @@ h1, h2, h3, h4, h5, h6 {
 		$height: 0.59649122807018em; // 34px;
 		display: inline-block;
 		position: relative;
-		float: left;
-		clear: left;
 		margin: 0 $width;
 
 		&:before,
@@ -87,14 +90,97 @@ h2 {
 }
 
 h3 {
-
+	font-size: 1.25em;
 }
 
 p {
 	color: $text1;
 	font-weight: 300;
+	clear: left;
+	font-size: 1em;
+	line-height: 1.85em;
 
 	&._lead {
 		font-size: 1.4em;
 	}
+}
+
+a {
+	color: inherit;
+	border-bottom: 1px dotted;
+
+
+	&:hover {
+		color: $color2;
+		border-bottom: 1px solid;
+		text-decoration: none;
+	}
+}
+
+._white {
+	color: white;
+}
+
+._white-bg {
+	background-color: white;
+}
+
+._color1 {
+	color: $color1;
+}
+
+._color1-bg {
+	background-color: $color1;
+}
+
+._color2 {
+	color: $color2;
+}
+
+._color2-bg {
+	background-color: $color2;
+}
+
+hr {
+	height: 4px;
+	border-top: 1px solid $color3;
+	border-bottom: 1px solid $color3;
+	border-left: none;
+	border-right: none;
+	position: relative;
+
+	&:before, 
+	&:after {
+		content: '';
+		display: inline-block;
+		height: 20px;
+		width: 1px;
+		background-color: $color3;
+		position: absolute;
+		top: -8px;
+	}
+
+	&:before {
+		left: 0px;
+	}
+
+	&:after {
+		right: 0px;
+	}
+
+	&._dark {
+		border-color: $color4;
+
+		&:before, 
+		&:after {
+			background-color: $color4;
+		}
+	}
+}
+
+section {
+	background-color: white;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	overflow: hidden;
 }

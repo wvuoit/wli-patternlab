@@ -89,5 +89,16 @@
 		{ },
 		{ },
 		{ }
+	],
+	"social-icons" : [
+		{
+			"icon-class" : "fa fa-facebook"
+		},
+		{
+			"icon-class" : "fa fa-twitter"
+		},
+		{
+			"icon-class" : "fa fa-youtube"
+		}
 	]
 }

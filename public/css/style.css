@@ -11,6 +11,11 @@
 	- _flourish
 - p
 	- _lead
+- a
+- colors
+- hr
+- section
+
 
 */
 html, body {
@@ -39,8 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   h1._flourish, h2._flourish, h3._flourish, h4._flourish, h5._flourish, h6._flourish {
     display: inline-block;
     position: relative;
-    float: left;
-    clear: left;
     margin: 0 0.52632em; }
     h1._flourish:before, h1._flourish:after, h2._flourish:before, h2._flourish:after, h3._flourish:before, h3._flourish:after, h4._flourish:before, h4._flourish:after, h5._flourish:before, h5._flourish:after, h6._flourish:before, h6._flourish:after {
       content: '';
@@ -61,11 +64,73 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
   font-size: 2.85rem; }
 
+h3 {
+  font-size: 1.25em; }
+
 p {
   color: #5b5b5b;
-  font-weight: 300; }
+  font-weight: 300;
+  clear: left;
+  font-size: 1em;
+  line-height: 1.85em; }
   p._lead {
     font-size: 1.4em; }
+
+a {
+  color: inherit;
+  border-bottom: 1px dotted; }
+  a:hover {
+    color: #ed8376;
+    border-bottom: 1px solid;
+    text-decoration: none; }
+
+._white {
+  color: white; }
+
+._white-bg {
+  background-color: white; }
+
+._color1 {
+  color: #1f1920; }
+
+._color1-bg {
+  background-color: #1f1920; }
+
+._color2 {
+  color: #ed8376; }
+
+._color2-bg {
+  background-color: #ed8376; }
+
+hr {
+  height: 4px;
+  border-top: 1px solid rgba(192, 192, 192, 0.35);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.35);
+  border-left: none;
+  border-right: none;
+  position: relative; }
+  hr:before, hr:after {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    background-color: rgba(192, 192, 192, 0.35);
+    position: absolute;
+    top: -8px; }
+  hr:before {
+    left: 0px; }
+  hr:after {
+    right: 0px; }
+  hr._dark {
+    border-color: rgba(128, 128, 128, 0.2); }
+    hr._dark:before, hr._dark:after {
+      background-color: rgba(128, 128, 128, 0.2); }
+
+section {
+  background-color: white;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  overflow: hidden; }
 
 /*
  _____     _     _               __    ____            _             _       
@@ -77,6 +142,9 @@ p {
 - inlineNav
 - leadText
 - carouselBox
+- photo
+	- _full
+- separator 
 
  */
 .wvu-atom-inlineNav .wvu-navList {
@@ -132,15 +200,104 @@ p {
   width: 18rem;
   height: 24.75rem;
   background-color: white;
-  padding: 2rem;
   box-sizing: border-box;
-  display: inline-block; }
-  .wvu-atom-carouselBox img {
-    margin-top: -2rem;
-    margin-left: -2rem;
-    margin-bottom: 2rem; }
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  line-height: 2em; }
+  .wvu-atom-carouselBox .wvu-boxText {
+    padding: 1.75rem; }
   .wvu-atom-carouselBox .wvu-title {
     font-size: 1.25rem;
-    font-weight: 300; }
+    font-weight: 300;
+    color: #483949;
+    line-height: 2em; }
   .wvu-atom-carouselBox .wvu-desc {
-    font-size: 1rem; }
+    font-size: 1rem;
+    color: #5b5b5b;
+    font-weight: 300; }
+
+.wvu-atom-photo._full {
+  width: 100%;
+  height: auto; }
+
+.wvu-atom-button {
+  border: none;
+  border-radius: 7px;
+  font-size: 1em;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 1.25em 3em;
+  line-height: 1em; }
+  .wvu-atom-button._full {
+    width: 100%; }
+
+.wvu-atom-separator {
+  height: 2em;
+  background-color: #f0f4f4; }
+
+.wvu-atom-socialIcon {
+  color: white;
+  font-size: 1.55em; }
+
+/*
+ _____     _     _               __    ____            _             _       
+|_   _|_ _| |__ | | ___    ___  / _|  / ___|___  _ __ | |_ ___ _ __ | |_ ___ 
+  | |/ _` | '_ \| |/ _ \  / _ \| |_  | |   / _ \| '_ \| __/ _ \ '_ \| __/ __|
+  | | (_| | |_) | |  __/ | (_) |  _| | |__| (_) | | | | ||  __/ | | | |_\__ \
+  |_|\__,_|_.__/|_|\___|  \___/|_|    \____\___/|_| |_|\__\___|_| |_|\__|___/
+
+- featuredBio
+- socialIcons
+
+ */
+.wvu-molecule-featuredBio h3 {
+  text-align: center; }
+.wvu-molecule-featuredBio img {
+  margin-bottom: 1.75em; }
+
+.wvu-molecule-socialIcons {
+  display: inline-block;
+  padding: .25em .5em;
+  border-radius: 100px;
+  background-color: rgba(128, 128, 128, 0.04706); }
+  .wvu-molecule-socialIcons .wvu-atom-socialIcon {
+    display: inline-block;
+    height: 63px;
+    width: 63px;
+    line-height: 63px;
+    text-align: center; }
+
+/*
+ _____     _     _               __    ____            _             _       
+|_   _|_ _| |__ | | ___    ___  / _|  / ___|___  _ __ | |_ ___ _ __ | |_ ___ 
+  | |/ _` | '_ \| |/ _ \  / _ \| |_  | |   / _ \| '_ \| __/ _ \ '_ \| __/ __|
+  | | (_| | |_) | |  __/ | (_) |  _| | |__| (_) | | | | ||  __/ | | | |_\__ \
+  |_|\__,_|_.__/|_|\___|  \___/|_|    \____\___/|_| |_|\__\___|_| |_|\__|___/
+
+ */
+/*
+ _____     _     _               __    ____            _             _       
+|_   _|_ _| |__ | | ___    ___  / _|  / ___|___  _ __ | |_ ___ _ __ | |_ ___ 
+  | |/ _` | '_ \| |/ _ \  / _ \| |_  | |   / _ \| '_ \| __/ _ \ '_ \| __/ __|
+  | | (_| | |_) | |  __/ | (_) |  _| | |__| (_) | | | | ||  __/ | | | |_\__ \
+  |_|\__,_|_.__/|_|\___|  \___/|_|    \____\___/|_| |_|\__\___|_| |_|\__|___/
+
+ */
+/*
+ _____     _     _               __    ____            _             _       
+|_   _|_ _| |__ | | ___    ___  / _|  / ___|___  _ __ | |_ ___ _ __ | |_ ___ 
+  | |/ _` | '_ \| |/ _ \  / _ \| |_  | |   / _ \| '_ \| __/ _ \ '_ \| __/ __|
+  | | (_| | |_) | |  __/ | (_) |  _| | |__| (_) | | | | ||  __/ | | | |_\__ \
+  |_|\__,_|_.__/|_|\___|  \___/|_|    \____\___/|_| |_|\__\___|_| |_|\__|___/
+
+  - whoWeAre
+
+ */
+.wvu-page-whoWeAre {
+  text-align: center; }
+  .wvu-page-whoWeAre .row {
+    margin-bottom: 2em;
+    overflow: hidden; }
+  .wvu-page-whoWeAre .wvu-textLeft {
+    text-align: left; }

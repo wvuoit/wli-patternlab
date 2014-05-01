@@ -8,6 +8,9 @@
 - inlineNav
 - leadText
 - carouselBox
+- photo
+	- _full
+- separator 
 
  */
 
@@ -82,26 +85,66 @@
 }
 
 .wvu-atom-carouselBox {
-	$padding: 2rem;
 	width: 18rem;
 	height: 24.75rem;
 	background-color: white;
-	padding: $padding;
 	box-sizing: border-box;
 	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+	line-height: 2em;
 
-	img {
-		margin-top: -$padding;
-		margin-left: -$padding;
-		margin-bottom: $padding;
+	.wvu-boxText {
+		padding: 1.75rem;
 	}
 
 	.wvu-title {
 		font-size: 1.25rem;
 		font-weight: $font-light;
+		color: $text2;
+		line-height: 2em;
 	}
 
 	.wvu-desc {
 		font-size: 1rem;
+		color: $text1;
+		font-weight: $font-light;
+
 	}
 }
+
+.wvu-atom-photo {
+
+	&._full {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.wvu-atom-button {
+	border: none;
+	border-radius: 7px;
+	font-size: 1em;
+	font-weight: $font-light;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 1.25em 3em;
+	line-height: 1em;
+
+	&._full {
+		width: 100%;
+	}
+}
+
+.wvu-atom-separator {
+	height: 2em;
+	background-color: #f0f4f4;
+}
+
+.wvu-atom-socialIcon {
+	color: white;
+	font-size: 1.55em;
+}
+
+
+
+
